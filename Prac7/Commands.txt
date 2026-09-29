@@ -1,0 +1,4 @@
+## PIN Connection ##
+GND - 6
+VCC - 2
+IN1 - 26s

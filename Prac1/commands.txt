@@ -1,0 +1,6 @@
+#### COMMANDS FOR LED PRACTICAL ####
+
+LED ANODE (+) ON 11 and 13 PIN
+GROUND CADOE (-) ON 06 AND 14
+
+#####################################

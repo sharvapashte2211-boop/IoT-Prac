@@ -1,0 +1,8 @@
+## PIN Connection ##
+VCC Color:RED Wire:RED Connect it to USB TTL(5V) : VCC
+GND Color:Black Wire:Black Connect it to USB-TTL: GND
+Tx Color:Yellow Wire:Yellow Connect it to USB-TTL: Rx
+Rx: Color:White Wire:White Connect it to USB-TTL: Tx
+
+## Commands ##
+pip3 install pyfingerprint 

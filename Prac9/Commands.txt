@@ -1,0 +1,9 @@
+## PIN Connection ##
+GND - 6
+VCC - 2
+SDA - 3
+SCL - 5
+
+## Commands ##
+sudo raspi-config (enable i2c)
+pip3 install adafruit-circuitpython-pn532 --break-system-packages

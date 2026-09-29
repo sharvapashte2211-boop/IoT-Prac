@@ -1,0 +1,9 @@
+### PIN Connection ###
+GND - 14
+VCC - 4
+D10 - 18
+CLK - 16
+
+#### Command for Prac 6 ####
+Install pip install RPi.GPIO--break-system-packages
+git clone https://github.com/bhoomikapansare/7Segment.git

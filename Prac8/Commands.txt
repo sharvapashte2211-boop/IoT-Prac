@@ -1,0 +1,5 @@
+## PIN Connection ##
+VCC - 1
+GND - 6
+SDA - 3
+SCL - 5

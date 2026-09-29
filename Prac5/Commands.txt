@@ -1,0 +1,30 @@
+### PIN CONNECTION ####
+VCC - PIN 2
+GND - PIN 6
+Tx - PIN 10
+
+## Commands ##
+1: Create a Virtual Environment
+1.1: Intalling virtual environment module.
+----> sudo apt install python3-venv
+1.2: Creating virtual environment
+----> python3 -m venv prac5
+1.3 Activate the vortual environment
+----> source/prac5/bin/activate
+
+2: Enter the following command one by one pressing enter each time
+----> dtparam=spi=on
+----> dtoverlay=pi3-disable-bt
+----> core_freq=250
+----> enable_uart=1
+----> force_turbo=1
+----> sudo systemctl stop serial-getty@ttyS0.service
+----> sudo systemctl disable serial-getty@ttyS0.service
+----> sudo systemctl enable serial-getty@ttyAMA0.service
+
+3: Installing minicom
+---->  sudo apt-get install minicom
+
+4: Installing Pynmea2
+----> pip install pynmea2 -break-system-packages
+5: ----> sudo cat/dev/ttyS0

@@ -1,0 +1,20 @@
+1. Open Telegram & seacrh for BotFather
+2. Enter the /start command to create a new bot.
+3. Obtain Access Token.
+4. Install Python Package Index
+-----> sudo apt-get install python-pip
+5: Install telebot (Virtual Environment)
+-----> sudo apt install python3-venv
+-----> python3 -m venv prac3
+-----> source prac3/bin/activate
+6: Install modules  in virtual env
+-----> pip install telepot
+-----> pip install RPI.GPIO
+7: Clone the git
+-----> git -clone https://github.com/salmanfarisvp/TelegramBot.git
+8: Setup Folder and files
+-----> mkdir TelegramBot
+-----> cd TelegramBot
+-----> nano telegrambot.py
+-----> bot = "PASTE THE BOT TOKEN IN HERE BU OPENING THE FILE IN THORNY"
+9: Send Command in the Telegram Chat and Start BOT
