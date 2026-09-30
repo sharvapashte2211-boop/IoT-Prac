@@ -1,0 +1,49 @@
+Command:
+Command 1: sudo raspi-config (enable i2c)
+Command 2: sudo reboot
+Command 3: pip3 install adafruit-circuitpython-pn532 --break-system-packages
+Command 3: sudo apt install -y libnfc-bin libnfc-dev libusb-dev libpcsclite-dev i2c-tools
+Command 4: sudo nano /etc/nfc/libnfc.conf
+Edit the code: #Allow device auto-detection (default: true)
+#Note: if this auto-detection is disabled, user has to set manually a device
+#configuration using file or environment variable
+allow_autoscan = false
+#Allow intrusive auto-detection (default: false)
+#Warning: intrusive auto-detection can seriously disturb other devices
+#This option is not recommended, user should prefer to add manually his device.
+#allow_intrusive_scan = false
+#Set log level (default: error)
+#Valid log levels are (in order of verbosity): 0 (none), 1 (error), 2 (info), 3 (debug)
+#Note: if you compiled with --enable-debug option, the default log level is &quot;debug&quot;
+#log_level = 1
+
+#Manually set default device (no default)
+#To set a default device, you must set both name and connstring for your device
+#Note: if autoscan is enabled, default device will be the first device available in device list.
+device.name = &quot;PN532 over I2C&quot;
+device.connstring = &quot;pn532_i2c:/dev/i2c-1&quot;
+
+Save the file.
+Command 5: i2cdetect –y 1 (optional put sudo)
+Command 6: nfc-list
+
+Enter the following Python program in thonny.
+import subprocess
+import time
+NAME = &quot;Upasana&quot; # Put your name here
+last_uid = None
+try:
+while True:
+output = subprocess.getoutput(&quot;nfc-list&quot;)
+if &quot;UID&quot; in output:
+for line in output.splitlines():
+if &quot;UID&quot; in line:
+uid = line.split(&quot;:&quot;)[1].strip().replace(&quot; &quot;, &quot;&quot;)
+if uid != last_uid:
+print(f&quot;{NAME}: {uid}&quot;)
+last_uid = uid
+break
+
+time.sleep(1)
+except KeyboardInterrupt:
+print(&quot;\nStopped&quot;)
